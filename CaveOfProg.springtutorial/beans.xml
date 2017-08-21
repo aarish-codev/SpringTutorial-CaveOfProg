@@ -8,11 +8,16 @@
 		<constructor-arg value="007" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Rishi" name="name" type="String"></constructor-arg>
 		<property name="taxId" value="123"></property>
+		<property name="address" ref="address"></property>
 	</bean>
 
 
 	<bean id="address" class="com.caveofprog.springdemo.Address">
 		<constructor-arg name="city" value="Thane"></constructor-arg>
 		<constructor-arg name="zipcode" value="400601"></constructor-arg>
+	</bean>
+
+	<bean id="beanMethods" class="com.caveofprog.springdemo.BeanMethods"
+		init-method="onCreate" destroy-method="onFinish">
 	</bean>
 </beans>

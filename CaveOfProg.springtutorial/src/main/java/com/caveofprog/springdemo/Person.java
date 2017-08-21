@@ -3,23 +3,27 @@ package com.caveofprog.springdemo;
 public class Person
 {
     /*
-     * id and name are using constructor args
-     * taxId is done using property 
+     * id and name are using constructor args taxId is done using property
      */
     private int id;
     private String name;
-    private int taxId;	// Camel casing is important here
-    
+    private int taxId; // Camel casing is important here
+    private Address address;
+
+    public void setAddress(Address address) {
+	this.address = address;
+    }
+
     public void setId(int id) {
-        this.id = id;
+	this.id = id;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public void setTaxId(int taxId) {
-        this.taxId = taxId;
+	this.taxId = taxId;
     }
 
     public Person() {
@@ -32,11 +36,9 @@ public class Person
 	this.name = name;
     }
 
-    
-
     @Override
     public String toString() {
-	return "Person [id=" + id + ", name=" + name + ", taxId=" + taxId + "]";
+	return "Person [id=" + id + ", name=" + name + ", taxId=" + taxId + ", address=" + address + "]";
     }
 
     public void speak() {

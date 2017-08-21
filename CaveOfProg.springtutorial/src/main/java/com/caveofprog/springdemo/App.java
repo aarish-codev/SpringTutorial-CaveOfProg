@@ -4,8 +4,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+@SuppressWarnings("unused")
 public class App
 {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
 	// when beans.xml is in project root
 
@@ -16,17 +18,27 @@ public class App
 	 * ClassPathXmlApplicationContext context = new
 	 * ClassPathXmlApplicationContext("beansPackage.xml");
 	 */
+	
+	
+	/*
 	Person person = (Person) context.getBean("person");
+	System.out.println(person);
+	 person.speak();
+	 */
 	// Another way
 	// Person person = (Person)context.getBean("person",Person.class);
 
-	person.speak();
-	System.out.println(person);
 	
-	Address address = (Address)context.getBean("address");
-	System.out.println(address);
 	
 
-	// ((ClassPathXmlApplicationContext)context).close();
+	// Address address = (Address)context.getBean("address");
+	// System.out.println(address);
+
+	BeanMethods beanM = (BeanMethods)context.getBean("beanMethods");
+	
+	
+	
+	
+	((FileSystemXmlApplicationContext)context).close();
     }
 }
