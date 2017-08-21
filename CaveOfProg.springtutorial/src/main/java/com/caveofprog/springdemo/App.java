@@ -18,27 +18,23 @@ public class App
 	 * ClassPathXmlApplicationContext context = new
 	 * ClassPathXmlApplicationContext("beansPackage.xml");
 	 */
-	
-	
-	/*
-	Person person = (Person) context.getBean("person");
-	System.out.println(person);
-	 person.speak();
-	 */
+
+	// Person person = (Person) context.getBean("person");
+	// System.out.println(person);
+	// person.speak();
+
 	// Another way
 	// Person person = (Person)context.getBean("person",Person.class);
-
-	
-	
 
 	// Address address = (Address)context.getBean("address");
 	// System.out.println(address);
 
-	BeanMethods beanM = (BeanMethods)context.getBean("beanMethods");
-	
-	
-	
-	
-	((FileSystemXmlApplicationContext)context).close();
+	// created for using p namespace
+	Address address2 = (Address) context.getBean("address2");
+	System.out.println(address2);
+
+	// BeanMethods beanM = (BeanMethods)context.getBean("beanMethods");
+
+	((FileSystemXmlApplicationContext) context).close();
     }
 }
