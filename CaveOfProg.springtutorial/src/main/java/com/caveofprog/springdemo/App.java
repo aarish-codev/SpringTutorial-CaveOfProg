@@ -22,6 +22,10 @@ public class App
 
 	person.speak();
 	System.out.println(person);
+	
+	Address address = (Address)context.getBean("address");
+	address.toString();
+	
 
 	// ((ClassPathXmlApplicationContext)context).close();
     }
